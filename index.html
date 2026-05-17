@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evoluir Mentes | Clínica Multidisciplinar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Lora', 'serif']
+                    },
+                    colors: {
+                        brand: {
+                            900: '#152C5B',
+                            800: '#1E3A8A',
+                            100: '#E0E7FF',
+                            50: '#F5F7FA',
+                        },
+                        gold: '#D4AF37'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F8F9FB;
+            background-image: radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 0.03) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 0.03) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 0.03) 0, transparent 50%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+        
+        .navbar-premium {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(21, 44, 91, 0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        }
+        
+        .clinic-card {
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 10px 40px -10px rgba(21, 44, 91, 0.08);
+            border: 1px solid rgba(21, 44, 91, 0.03);
+            transition: all 0.4s ease;
+        }
+        
+        .clinic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px -10px rgba(21, 44, 91, 0.12);
+        }
+        
+        @keyframes pulse-soft {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        .btn-whatsapp {
+            animation: pulse-soft 2s infinite;
+        }
+        /* Animações dos elementos flutuantes */
+        
+        @keyframes float1 {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+        
+        @keyframes float2 {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(20px) rotate(-15deg);
+            }
+        }
+        
+        @keyframes float3 {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(-5deg);
+            }
+        }
+        
+        .anim-float-1 {
+            animation: float1 8s ease-in-out infinite;
+        }
+        
+        .anim-float-2 {
+            animation: float2 11s ease-in-out infinite;
+        }
+        
+        .anim-float-3 {
+            animation: float3 14s ease-in-out infinite;
+        }
+        
+        .icon-bg {
+            position: fixed;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.15;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-brand-900 selection:text-white pt-32 relative">
+
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
+        <i class="fas fa-car icon-bg anim-float-1 text-5xl md:text-7xl text-blue-500 top-[12%] left-[8%]"></i>
+        <i class="fas fa-rocket icon-bg anim-float-2 text-6xl md:text-7xl text-pink-500 bottom-[20%] right-[10%]"></i>
+        <i class="fas fa-puzzle-piece icon-bg anim-float-3 text-6xl md:text-8xl text-gold top-[50%] left-[12%]"></i>
+        <i class="fas fa-cubes icon-bg anim-float-1 text-4xl md:text-6xl text-blue-600 top-[25%] right-[25%]"></i>
+
+        <i class="fas fa-stethoscope icon-bg anim-float-2 text-6xl md:text-8xl text-pink-600 top-[18%] right-[8%]"></i>
+        <i class="fas fa-microscope icon-bg anim-float-3 text-5xl md:text-7xl text-blue-500 bottom-[30%] left-[10%]"></i>
+        <i class="fas fa-brain icon-bg anim-float-1 text-6xl md:text-8xl text-gold top-[65%] right-[18%]"></i>
+
+        <i class="fas fa-seedling icon-bg anim-float-2 text-5xl md:text-6xl text-pink-500 bottom-[10%] left-[35%]"></i>
+        <i class="fas fa-leaf icon-bg anim-float-3 text-5xl md:text-6xl text-blue-400 top-[8%] left-[45%]"></i>
+    </div>
+
+    <a href="https://wa.me/5548988670197" target="_blank" class="btn-whatsapp fixed bottom-8 right-8 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-lg hover:scale-110 transition-transform duration-300">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <nav class="navbar-premium fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+
+            <a href="#home" class="flex items-center gap-5 hover:opacity-80 transition relative md:-mb-10">
+                <img src="logo_evoluir.jpg" alt="Logo Evoluir Mentes" class="h-24 w-32 md:h-32 md:w-48 object-cover rounded-2xl border-4 border-white shadow-md">
+                <div class="hidden sm:block">
+                    <h1 class="font-serif font-bold text-brand-900 text-xl leading-tight">Evoluir Mentes</h1>
+                    <span class="text-[10px] uppercase tracking-widest text-gold font-bold">Clínica Multidisciplinar</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 font-bold text-xs tracking-widest uppercase text-brand-900">
+                <a href="#home" class="hover:text-gold transition">Início</a>
+                <a href="#equipe" class="hover:text-gold transition">Corpo Clínico</a>
+                <a href="#depoimentos" class="hover:text-gold transition">Pacientes</a>
+                <a href="#contato" class="hover:text-gold transition">Contato</a>
+            </div>
+
+            <a href="https://wa.me/5548988670197" target="_blank" class="md:hidden bg-brand-900 text-white px-6 py-3 rounded-full font-bold uppercase text-xs tracking-wider shadow-md">
+                Agendar
+            </a>
+        </div>
+    </nav>
+
+    <header id="home" class="relative pt-20 pb-24 px-6 max-w-5xl mx-auto text-center z-10 scroll-mt-32">
+        <h1 class="font-serif text-4xl md:text-5xl font-bold text-brand-900 mb-8 tracking-tight scroll-mt-32">
+            QUEM SOMOS
+        </h1>
+        <div class="space-y-6 text-lg md:text-xl text-slate-600 leading-relaxed max-w-4xl mx-auto font-light bg-white/70 p-8 rounded-3xl backdrop-blur-sm border border-white shadow-sm">
+            <p>A Clínica Evoluir Mentes é um espaço acolhedor dedicado ao desenvolvimento de crianças, adolescentes e adultos, oferecendo orientação e suporte também às suas famílias.</p>
+            <p>Nosso objetivo é estimular o potencial de cada individuo por meio de atendimentos especializados e humanizados nas áreas do neurodesenvolvimento, respeitando a singularidade de cada paciente e promovendo avanços significativos em seu desenvolvimento.
+                ✨
+            </p>
+        </div>
+        <a href="#equipe" class="inline-block mt-12 bg-brand-900 text-white px-10 py-4 rounded-full font-bold uppercase tracking-wider text-sm hover:bg-brand-800 transition-colors shadow-lg">
+            Conhecer Especialistas
+        </a>
+    </header>
+
+    <section id="equipe" class="py-24 px-6 max-w-7xl mx-auto relative z-10 scroll-mt-24">
+        <div class="text-center mb-20">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-900 mb-4 tracking-tight uppercase">Mentes que Transformam</h2>
+            <div class="w-20 h-1 bg-gold mx-auto rounded-full mb-4"></div>
+            <p class="text-slate-500 uppercase tracking-widest text-sm font-bold">Corpo Clínico Multidisciplinar</p>
+        </div>
+
+        <div class="space-y-16">
+
+            <div class="clinic-card overflow-hidden flex flex-col md:flex-row">
+                <div class="md:w-2/5 shrink-0">
+                    <img src="jaqueline_freire.jpg" alt="Jaqueline Freire" class="w-full h-full object-cover min-h-[400px]">
+                </div>
+                <div class="p-10 md:p-14 flex flex-col justify-center">
+                    <h3 class="font-serif text-3xl font-bold text-brand-900 mb-1">Jaqueline Freire</h3>
+                    <p class="text-gold font-bold uppercase tracking-wider text-xs mb-6">Fundadora | Pedagoga, Psicopedagoga e Neuropsicopedagoga</p>
+                    <p class="text-slate-600 leading-relaxed mb-8">
+                        Uma das fundadoras da Evoluir Mentes. Pedagoga, Psicopedagoga e Neuropsicopedagoga (SBNPP nº 18991), especializada em Intervenção ABA para Autismo e Deficiência Intelectual e pós-graduanda em Desenvolvimento Infantil pelo CBI. Atua na avaliação de TEA,
+                        TDAH e Transtornos Específicos de Aprendizagem, com foco no desenvolvimento e nas dificuldades de aprendizagem de crianças e adolescentes.
+                    </p>
+                    <div class="mt-auto">
+                        <button onclick="agendar('Jaqueline Freire')" class="bg-brand-100 text-brand-900 px-8 py-3 rounded-full font-bold uppercase text-xs tracking-wider hover:bg-brand-900 hover:text-white transition shadow-sm">
+                            Agendar com Jaqueline
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clinic-card overflow-hidden flex flex-col md:flex-row-reverse">
+                <div class="md:w-2/5 shrink-0">
+                    <img src="loreci_tasca.jpg" alt="Loreci Tasca" class="w-full h-full object-cover min-h-[400px]">
+                </div>
+                <div class="p-10 md:p-14 flex flex-col justify-center">
+                    <h3 class="font-serif text-3xl font-bold text-brand-900 mb-1">Loreci Tasca</h3>
+                    <p class="text-gold font-bold uppercase tracking-wider text-xs mb-6">Fundadora | Psicóloga e Neuropsicóloga</p>
+                    <div class="text-slate-600 leading-relaxed mb-8 space-y-4">
+                        <p>Loreci Tasca, psicóloga e neuropsicóloga, uma das fundadoras da Clínica Evoluir Mentes. Especialista em Neuropsicologia e pós-graduada em Neurociência do Comportamento. Atua com crianças, adolescentes e adultos, realizando acompanhamento
+                            psicológico e avaliação neuropsicológica com base técnica e olhar individualizado.</p>
+                    </div>
+                    <div class="mt-auto">
+                        <button onclick="agendar('Loreci Tasca')" class="bg-brand-100 text-brand-900 px-8 py-3 rounded-full font-bold uppercase text-xs tracking-wider hover:bg-brand-900 hover:text-white transition shadow-sm">
+                            Agendar com Loreci
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clinic-card overflow-hidden flex flex-col md:flex-row">
+                <div class="md:w-2/5 shrink-0">
+                    <img src="suelle_alves.jpg" alt="Suelle Alves" class="w-full h-full object-cover min-h-[400px]">
+                </div>
+                <div class="p-10 md:p-14 flex flex-col justify-center">
+                    <h3 class="font-serif text-3xl font-bold text-brand-900 mb-1">Suelle Alves</h3>
+                    <p class="text-gold font-bold uppercase tracking-wider text-xs mb-6">Fundadora | Fonoaudióloga</p>
+                    <div class="text-slate-600 leading-relaxed mb-8 space-y-4">
+                        <p>Suelle Alves. Fonoaudióloga e uma das fundadoras da Clínica Evoluir Mentes. Realiza atendimentos de forma acolhedora e individualizada, sempre respeitando o ritmo e as necessidades de cada criança. Atua com Teste da Linguinha,
+                            realizando avaliação e diagnóstico das alterações do frênulo lingual (anquiloglossia). Trabalha com intervenção em Transtorno Fonológico, auxiliando crianças que apresentam trocas ou omissões de sons na fala, além de acompanhamento
+                            terapêutico para Gagueira (Disfemia).</p>
+                        <p>Também atua nos casos de Atraso de Linguagem, estimulando o desenvolvimento da comunicação e da linguagem oral, e realiza avaliação e terapia em Transtorno do Processamento Auditivo (TPA), auxiliando crianças que apresentam dificuldade
+                            em compreender, interpretar ou reter informações auditivas.</p>
+                    </div>
+                    <div class="mt-auto">
+                        <button onclick="agendar('Suelle Alves')" class="bg-brand-100 text-brand-900 px-8 py-3 rounded-full font-bold uppercase text-xs tracking-wider hover:bg-brand-900 hover:text-white transition shadow-sm">
+                            Agendar com Suelle
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clinic-card overflow-hidden flex flex-col md:flex-row-reverse">
+                <div class="md:w-2/5 shrink-0">
+                    <img src="jamyle_quinto.jpg" alt="Jamyle Quinto" class="w-full h-full object-cover min-h-[400px]">
+                </div>
+                <div class="p-10 md:p-14 flex flex-col justify-center">
+                    <h3 class="font-serif text-3xl font-bold text-brand-900 mb-1">Jamyle Quinto</h3>
+                    <p class="text-gold font-bold uppercase tracking-wider text-xs mb-6">Pedagoga e Psicopedagoga</p>
+                    <div class="text-slate-600 leading-relaxed mb-8 space-y-4">
+                        <p>Jamyle Quinto é Pedagoga, Psicopedagoga, pós-graduada em Análise do Comportamento Aplicada, atualmente pós-graduanda em Neuropsicologia.</p>
+                        <p>Atua na avaliação e intervenção das dificuldades de aprendizagem, com experiência clínica e educacional no atendimento de crianças e adolescentes, incluindo casos de TEA, TDAH, dislexia e outras demandas do neurodesenvolvimento.</p>
+                    </div>
+                    <div class="mt-auto">
+                        <button onclick="agendar('Jamyle Quinto')" class="bg-brand-100 text-brand-900 px-8 py-3 rounded-full font-bold uppercase text-xs tracking-wider hover:bg-brand-900 hover:text-white transition shadow-sm">
+                            Agendar com Jamyle
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clinic-card overflow-hidden flex flex-col md:flex-row">
+                <div class="md:w-2/5 shrink-0">
+                    <img src="vanessa_costa.jpg" alt="Vanessa Costa" class="w-full h-full object-cover min-h-[400px]">
+                </div>
+                <div class="p-10 md:p-14 flex flex-col justify-center relative">
+                    <h3 class="font-serif text-3xl font-bold text-brand-900 mb-1">Vanessa Costa</h3>
+                    <p class="text-gold font-bold uppercase tracking-wider text-xs mb-6">Fisioterapeuta Infantil & Psicomotricista</p>
+                    <div class="text-slate-600 leading-relaxed mb-8 space-y-4">
+                        <p>Especialista em Neurodesenvolvimento, Autismo e Psicomotricidade. Sou fisioterapeuta infantil e dedicada ao cuidado de crianças com Transtorno do Espectro Autista (TEA) e alterações neurológicas. Atua com foco no desenvolvimento
+                            global da criança, respeitando sua individualidade, seu tempo e suas potencialidades. Meu trabalho une ciência, sensibilidade e estratégias lúdicas para promover evolução motora, cognitiva e funcional.</p>
+                        <ul class="list-none space-y-1 my-2 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 text-sm bg-brand-50 p-6 rounded-2xl border border-brand-100 font-normal">
+                            <li>✔️ Intervenção precoce no TEA</li>
+                            <li>✔️ Reabilitação neurológica infantil</li>
+                            <li>✔️ Estimulação do desenvolvimento motor</li>
+                            <li>✔️ Psicomotricidade</li>
+                            <li>✔️ Coordenação motora e equilíbrio</li>
+                            <li>✔️ Integração sensorial</li>
+                            <li>✔️ Orientação familiar</li>
+                        </ul>
+                        <p>Acredito que cada criança é única e que, com estímulos adequados e um olhar humanizado, é possível transformar desafios em conquistas diárias. Meu compromisso é proporcionar autonomia, funcionalidade e qualidade de vida, sempre
+                            trabalhando em parceria com a família e equipe multidisciplinar. 💙 Desenvolver com amor, ciência e propósito.</p>
+                    </div>
+                    <div class="mt-auto">
+                        <button onclick="agendar('Vanessa Costa')" class="bg-brand-100 text-brand-900 px-8 py-3 rounded-full font-bold uppercase text-xs tracking-wider hover:bg-brand-900 hover:text-white transition shadow-sm">
+                            Agendar com Vanessa
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clinic-card overflow-hidden flex flex-col md:flex-row-reverse border-l-8 border-l-brand-900">
+                <div class="md:w-2/5 shrink-0">
+                    <img src="ivan_rodrigues.jpg" alt="Ivan Rodrigues" class="w-full h-full object-cover min-h-[400px] grayscale hover:grayscale-0 transition duration-700">
+                </div>
+                <div class="p-10 md:p-14 flex flex-col justify-center">
+                    <h3 class="font-serif text-3xl font-bold text-brand-900 mb-1">Ivan Rodrigues</h3>
+                    <p class="text-slate-500 font-bold uppercase tracking-wider text-xs mb-6">Psicólogo, Analista do Comportamento e Treinador</p>
+                    <div class="text-slate-600 leading-relaxed mb-8 space-y-4 font-light">
+                        <p class="font-bold text-brand-900 text-lg">Sobre Ivan Rodrigues</p>
+                        <p>Sou psicólogo, analista do comportamento e treinador especializado em saúde emocional masculina, tomada de decisão e liderança sob pressão. Atuo com homens que carregam responsabilidades — na família, nos negócios e na vida profissional
+                            — e que precisam desenvolver equilíbrio emocional, clareza e posicionamento sem perder força, identidade ou direção.</p>
+                        <p>Minha prática integra Psicologia, Análise do Comportamento, TCC e estratégias estruturadas de desenvolvimento humano, com foco em regulação emocional, responsabilidade pessoal e construção de maturidade funcional. Além do atendimento
+                            individual, atuo no contexto corporativo com saúde mental estratégica, desenvolvimento de lideranças e intervenções voltadas à performance sustentável e à prevenção de riscos emocionais.</p>
+                        <div class="mt-6 pt-6 border-t border-slate-200">
+                            <p class="font-serif text-brand-900 text-xl font-medium">"Meu trabalho não é sobre fragilidade. É sobre estrutura emocional. É sobre decisão."</p>
+                        </div>
+                    </div>
+                    <div class="mt-auto">
+                        <button onclick="agendar('Ivan Rodrigues')" class="bg-brand-900 text-white px-8 py-3 rounded-full font-bold uppercase text-xs tracking-wider hover:bg-brand-800 transition shadow-md">
+                            Agendar com Ivan
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="depoimentos" class="py-24 px-6 relative z-10 bg-brand-50/80 border-y border-brand-100 scroll-mt-24 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-900 mb-4 tracking-tight uppercase">O que os pacientes acham</h2>
+                <div class="w-20 h-1 bg-gold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-yellow-400 mb-4 text-sm flex gap-1 justify-center">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed mb-6 grow font-light text-sm text-center">"As profissionais são super capacitadas, dedicadas e experientes. Atendimento único e personalizado para atender as necessidades de cada família e criança. Super indico."</p>
+                    <p class="font-bold text-brand-900 text-xs uppercase tracking-wider text-center">Cintia Sabrina</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-yellow-400 mb-4 text-sm flex gap-1 justify-center">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed mb-6 grow font-light text-sm text-center">"Atendimento excelente, profissionais capacitados, atenciosos e pontuais, ambiente aconchegante e organizado."</p>
+                    <p class="font-bold text-brand-900 text-xs uppercase tracking-wider text-center">Samara Lobo</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-yellow-400 mb-4 text-sm flex gap-1 justify-center">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed mb-6 grow font-light text-sm text-center">"Estrutura aconchegante, excelentes profissionais. Meu filho de 11 anos está fazendo terapia na clinica e já na 2 sessão já vi diferença. Estou contente com a evolução dele. As profissionais são maravilhosas, podem confiar."</p>
+                    <p class="font-bold text-brand-900 text-xs uppercase tracking-wider text-center">Aryana Ary</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-yellow-400 mb-4 text-sm flex gap-1 justify-center">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed mb-6 grow font-light text-sm text-center">"A fono é maravilhosa, ótimo atendimento, muito atenciosa!!!!!"</p>
+                    <p class="font-bold text-brand-900 text-xs uppercase tracking-wider text-center">João Pedro Silva Alves</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato" class="pt-24 pb-12 relative z-10 text-center scroll-mt-32 border-t border-slate-100 bg-white/50 backdrop-blur-md">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-900 mb-12">Localização</h2>
+
+            <a href="maps.google.com/13" target="_blank" class="block bg-white border border-brand-100 rounded-[3rem] p-10 hover:bg-brand-50 transition duration-300 group shadow-sm mb-16 max-w-2xl mx-auto">
+                <i class="fas fa-map-marker-alt text-5xl text-brand-900 mb-6 group-hover:scale-110 transition-transform"></i>
+                <p class="text-xl font-bold text-brand-900 mb-2">Abrir no Google Maps 📍</p>
+                <p class="text-slate-500 font-light">R. Princesa Isabel, 21 - Forquilhinhas, São José - SC</p>
+            </a>
+
+            <div class="mb-16">
+                <a href="https://instagram.com/clinicaevoluirmentes" target="_blank" class="inline-flex items-center gap-3 bg-white border border-slate-200 text-brand-900 px-8 py-4 rounded-full font-bold hover:shadow-md hover:border-brand-900 transition duration-300">
+                    <i class="fab fa-instagram text-2xl text-[#E1306C]"></i>
+                    <span>@clinicaevoluirmentes</span>
+                </a>
+            </div>
+
+            <p class="mt-20 text-slate-400 text-[10px] uppercase tracking-[0.6em] font-bold">© 2026 Evoluir Mentes | (48) 98867-0197</p>
+        </div>
+    </footer>
+
+    <script>
+        function agendar(nome) {
+            const tel = "5548988670197";
+            const msg = encodeURIComponent(`Olá! Vi o site da Evoluir Mentes e gostaria de agendar uma consulta com ${nome}.`);
+            window.open(`https://wa.me/${tel}?text=${msg}`, "_blank");
+        }
+    </script>
+</body>
+
+</html>
